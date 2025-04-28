@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  server:
+    build: .
+    ports:
+      - "8050:8050"
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: uv run server.py
+networks:
+  app-network:
+    driver: bridge
